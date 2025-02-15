@@ -32,31 +32,37 @@ module Program
 
 
     let powerFunction number power =
-        let numberSquared number = number * number
+        match number, power with
+        |0, _ -> 0
+        |_, 0 |1, _ -> 1
+        |_, x when (x < 0) -> failwith "no negative exponents allowed"
+        |_, _ ->
         
-        let mutable newNumber = number
-        let mutable remainder = power 
-        let mutable closestFactorOfTwo = 1
-        let mutable closestPowerOfTwo = 1
-        let mutable counter = 0
-        
-        while remainder > closestFactorOfTwo do
-            remainder <- remainder - closestFactorOfTwo
-            closestFactorOfTwo <- closestFactorOfTwo * 2
-            closestPowerOfTwo <- closestPowerOfTwo + 1
-            newNumber <- numberSquared newNumber
-            counter <- counter + 1
-        
-        
-        for i in 1..((remainder - 1)/2) do
-            newNumber <- newNumber * (numberSquared number)
-            counter <- counter + 1
-        
-        if (remainder - 1) % 2 = 1 then
-            newNumber <- newNumber * number
-            counter <- counter + 1
-        
-        newNumber
+            let numberSquared number = number * number
+            
+            let mutable newNumber = number
+            let mutable remainder = power 
+            let mutable closestFactorOfTwo = 1
+            let mutable closestPowerOfTwo = 1
+            let mutable counter = 0
+            
+            while remainder > closestFactorOfTwo do
+                remainder <- remainder - closestFactorOfTwo
+                closestFactorOfTwo <- closestFactorOfTwo * 2
+                closestPowerOfTwo <- closestPowerOfTwo + 1
+                newNumber <- numberSquared newNumber
+                counter <- counter + 1
+            
+            
+            for i in 1..((remainder - 1)/2) do
+                newNumber <- newNumber * (numberSquared number)
+                counter <- counter + 1
+            
+            if (remainder - 1) % 2 = 1 then
+                newNumber <- newNumber * number
+                counter <- counter + 1
+            
+            newNumber
         // counter
 
     (*
@@ -72,7 +78,7 @@ module Program
         match alph.Length, n with
         |0, _ -> failwith "no empty lists allowed"
         |_, 0 -> []
-        |1, _ -> [alph.Head]
+        |1, x -> [for i in 0..x -> alph.Head]
         |_, 1 -> alph
         |_, _ -> 
             let mutable n = n - 1
@@ -120,6 +126,7 @@ module Program
                 output@nextPart
         
         match set with
+        |[] -> []
         |[h] -> [h]
         |h::m::t when not(t = []) -> powerSet(t, [h; h + m; m], 0)
         |h::[t] -> [h; h + t; t]

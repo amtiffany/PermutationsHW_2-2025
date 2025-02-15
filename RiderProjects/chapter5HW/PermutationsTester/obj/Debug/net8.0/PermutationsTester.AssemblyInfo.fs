@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("PermutationsTester")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2a427a6a8638f1e910a6e72fb5bd767e50c3da0")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("PermutationsTester")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("PermutationsTester")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

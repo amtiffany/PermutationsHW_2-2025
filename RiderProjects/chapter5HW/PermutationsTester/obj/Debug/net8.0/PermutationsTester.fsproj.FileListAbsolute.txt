@@ -109,3 +109,4 @@
 /home/alice/RiderProjects/chapter5HW/PermutationsTester/obj/Debug/net8.0/PermutationsTester.pdb
 /home/alice/RiderProjects/chapter5HW/PermutationsTester/obj/Debug/net8.0/PermutationsTester.genruntimeconfig.cache
 /home/alice/RiderProjects/chapter5HW/PermutationsTester/obj/Debug/net8.0/ref/PermutationsTester.dll
+/home/alice/RiderProjects/chapter5HW/PermutationsTester/obj/Debug/net8.0/PermutationsTester.sourcelink.json
